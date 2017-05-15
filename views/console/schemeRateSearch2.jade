@@ -1,0 +1,393 @@
+extends ../layout
+block content
+	// Content Header (Page header)
+	section.content-header
+		h1
+			| Search - Scheme Rate Master
+		ol.breadcrumb
+			li
+				a(href='#')
+					i.fa.fa-dashboard
+					| Home
+			li.active Scheme Rate Master
+	// Main content
+	section.content
+		// general form elements
+		.box.box-primary
+			// form start
+			form(role='form')
+				.box-body
+					.form-group
+						.row
+							.col-sm-2
+								label Scheme Rate Pattern
+							// /.col
+							.col-sm-4
+								select.form-control
+									option All
+									option Act Only
+									option Act+Proserm
+									option Act+Refill
+									option Act+Refill+Proserm
+									option Device Sell-Out
+									option Proserm Only
+							// /.col
+							.col-sm-2
+								label Scheme Group
+							// /.col
+							.col-sm-4
+								select.form-control
+									option All
+									option Act Only-Daily
+									option Act Refill-Daily
+									option Act+Proserm
+									option Act+Proserm(Online)AOU1D
+									option Act+Proserm(Online)AOU1D
+									option Act+Proserm(Special)
+									option Act_Proserm_Daily
+									option Proserm Special
+									option Refill AOU10D
+									option Refill AOU10D200B
+									option Refill AOU30D300B
+									option Refill AOU7D
+									option Refill+Proserm AOU10D
+									option SIMJew Refill (AOU10D)
+									option SIMJew Refill (AOU7D)
+									option Special Refill 
+									option Special Refill AOU10D
+									option Special Refill AOU7D
+									option USSD (Partner)
+									option USSD (Post)
+									option USSD (Pre)
+									option USSD SIMJew
+							// /.col
+						// /.row
+					.form-group
+						.row
+							.col-sm-2
+								label Scheme Name
+							// /.col
+							.col-sm-4
+								input.form-control.pull-right(type='text')
+							// /.col
+							.col-sm-2
+								| 
+							// /.col
+							.col-sm-4
+								| 
+							// /.col
+						// /.row
+					.form-group
+						.row
+							.col-sm-2
+								label Start Date 
+							// /.col
+							.col-sm-4
+								.input-group
+									.input-group-addon
+										i.fa.fa-calendar
+									input#reservation1.form-control.pull-right(type='text')
+							// /.col
+							.col-sm-2
+								label End Date 
+							// /.col
+							.col-sm-4
+								.input-group
+									.input-group-addon
+										i.fa.fa-calendar
+									input#reservation2.form-control.pull-right(type='text')
+							// /.col
+						// /.row
+					.form-group
+						.row
+							.col-sm-2
+								label Aou from
+							// /.col
+							.col-sm-4
+								input.form-control(type='text')
+							// /.col
+							.col-sm-2
+								label Aou to
+							// /.col
+							.col-sm-4
+								input.form-control(type='text')
+							// /.col
+						// /.row
+					.form-group
+						.row
+							.col-sm-2
+								label Reward Type
+							// /.col
+							.col-sm-4
+								select.form-control
+									option All
+									option Cash
+									option Cash &amp; DOL
+									option DOL
+									option Point
+							// /.col
+							.col-sm-2
+								label Golive Status
+							// /.col
+							.col-sm-4
+								select.form-control
+									option All
+									option Test
+									option Golive
+							// /.col
+						// /.row
+					.form-group
+						.row
+							.col-sm-2
+								label Payment Frequency
+							// /.col
+							.col-sm-4
+								select.form-control
+									option All
+									option Daily
+									option Monthly
+									option Specific
+							// /.col
+							.col-sm-2
+								| 
+							// /.col
+							.col-sm-4
+								| 
+							// /.col
+						// /.row
+			// /.box-body
+			.box-footer
+				button.btn.btn-primary(type='button') Search
+		// /.box						
+		.box.box-primary
+			.box-header
+				h3.box-title Search Result
+			// /.box-header
+			.box-body.table-responsive.no-padding
+				table.table.table-hover
+					thead
+						tr
+							th(style='width: 50px') Edit
+							th View Matrix
+							th Scheme Patten
+							th Scheme Name
+							th Scheme Group Name	
+							th Scheme Description
+							th Start Date
+							th End Date
+							th AOU From
+							th AOU To
+							th Reward Type
+							th Golive Status
+							th Payment Frequency
+							th Create Date
+							th Create By
+							th Change Date
+							th Change By
+					tbody
+						tr
+							td
+								center
+									a(href='/console/schemeRateEdit.html')
+										i.fa.fa-edit
+							td
+								center
+									a(href='/console/schemeRateView.html')
+										i.fa.fa-search
+							td Act+Refill
+							td Sch_ActRefill_AOU10D_HOL_Silver_ActJun16_Monthly
+							td Refill AOU10D
+							td Sch_ActRefill_AOU10D_HOL_Silver_ActJun16_Monthly
+							td 30/03/2015
+							td 15/01/2017
+							td 1
+							td 10
+							td HOL-Cash
+							td 
+								span.badge.bg-green Go-Live
+							td Monthly
+							td 30/03/2015 10:37:42
+							td CHAIYUTP
+							td 05/07/2016 18:29:41
+							td CHAIYUTP
+						
+						tr
+							td
+								center
+									a(href='/console/schemeRateEdit.html')
+										i.fa.fa-edit
+							td
+								center
+									a(href='/console/schemeRateView.html')
+										i.fa.fa-search
+							td Act+Refill
+							td Sch_ActRefill_AOU10D_HOL_Platinum_ActJun16_Monthly
+							td Refill AOU10D
+							td Sch_ActRefill_AOU10D_HOL_Platinum_ActJun16_Monthly
+							td 30/03/2015
+							td 15/01/2017
+							td 1
+							td 10
+							td HOL-Cash
+							td 
+								span.badge.bg-green Go-Live
+							td Monthly
+							td 30/03/2015 10:35:58
+							td CHAIYUTP
+							td 05/07/2016 18:29:11
+							td CHAIYUTP
+						
+						tr
+							td
+								center
+									a(href='/console/schemeRateEdit.html')
+										i.fa.fa-edit
+							td
+								center
+									a(href='/console/schemeRateView.html')
+										i.fa.fa-search
+							td Act+Refill
+							td Sch_ActRefill_AOU10D_HOL_Gold_ActJun16_Monthly
+							td Refill AOU10D
+							td Sch_ActRefill_AOU10D_HOL_Gold_ActJun16_Monthly
+							td 30/03/2015
+							td 15/01/2017
+							td 1
+							td 10
+							td HOL-Cash
+							td 
+								span.badge.bg-green Go-Live
+							td Monthly
+							td 30/03/2015 10:34:17
+							td CHAIYUTP
+							td 05/07/2016 18:28:44
+							td CHAIYUTP
+						
+						tr
+							td
+								center
+									a(href='/console/schemeRateEdit.html')
+										i.fa.fa-edit
+							td
+								center
+									a(href='/console/schemeRateView.html')
+										i.fa.fa-search
+							td Act+Refill
+							td Sch_ActRefill_AOU10D_Cash_Silver_ActJun16_Monthly
+							td Refill AOU10D
+							td Sch_ActRefill_AOU10D_Cash_Silver_ActJun16_Monthly
+							td 30/03/2015
+							td 15/01/2017
+							td 1
+							td 10
+							td Cash
+							td 
+								span.badge.bg-green Go-Live
+							td Monthly
+							td 30/03/2015 10:32:37
+							td CHAIYUTP
+							td 05/07/2016 18:27:06
+							td CHAIYUTP
+							
+						tr
+							td
+								center
+									a(href='/console/schemeRateEdit.html')
+										i.fa.fa-edit
+							td
+								center
+									a(href='/console/schemeRateView.html')
+										i.fa.fa-search
+							td Act+Refill
+							td Sch_ActRefill_AOU10D_Cash_Platinum_ActJun16_Monthly
+							td Refill AOU10D
+							td Sch_ActRefill_AOU10D_Cash_Platinum_ActJun16_Monthly
+							td 30/03/2015
+							td 15/01/2017
+							td 1
+							td 10
+							td Cash
+							td 
+								span.badge.bg-green Go-Live
+							td Monthly
+							td 30/03/2015 10:28:21
+							td CHAIYUTP
+							td 05/07/2016 18:24:42
+							td CHAIYUTP
+						
+						tr
+							td
+								center
+									a(href='/console/schemeRateEdit.html')
+										i.fa.fa-edit
+							td
+								center
+									a(href='/console/schemeRateView.html')
+										i.fa.fa-search
+							td Act+Refill
+							td Sch_ActRefill_AOU10D_Cash_Gold_ActJun16_Monthly
+							td Refill AOU10D
+							td Sch_ActRefill_AOU10D_Cash_Gold_ActJun16_Monthly
+							td 30/03/2015
+							td 15/01/2017
+							td 1
+							td 10
+							td Cash
+							td 
+								span.badge.bg-yellow Test
+							td Monthly
+							td 30/03/2015 10:26:02
+							td CHAIYUTP
+							td 05/07/2016 18:22:26
+							td CHAIYUTP
+							
+						tr
+							td
+								center
+									a(href='/console/schemeRateEdit.html')
+										i.fa.fa-edit
+							td
+								center
+									a(href='/console/schemeRateView.html')
+										i.fa.fa-search
+							td Act+Refill
+							td Sch_ActRefill_Monthly_Template_HOL_10D200B_Jun16_DTC
+							td Refill AOU10D
+							td Sch_ActRefill_Monthly_Template_HOL_10D200B_Jun16_DTC
+							td 30/03/2015
+							td 15/01/2017
+							td 1
+							td 10
+							td HOL-Cash
+							td 
+								span.badge.bg-green Go-Live
+							td Monthly
+							td 30/03/2015 17:13:12
+							td CHAIYUTP
+							td 05/07/2016 17:16:21
+							td CHAIYUTP
+		
+			// /.box-body
+		// /.box
+	// /.content
+	block javascript
+		// jQuery 2.0.2
+		script(src='/js/libs/jquery.min.js')
+		// Bootstrap
+		script(src='/js/bootstrap.min.js', type='text/javascript')
+		// InputMask
+		script(src='/js/plugins/input-mask/jquery.inputmask.js', type='text/javascript')
+		script(src='/js/plugins/input-mask/jquery.inputmask.date.extensions.js', type='text/javascript')
+		script(src='/js/plugins/input-mask/jquery.inputmask.extensions.js', type='text/javascript')
+		// date-range-picker
+		script(src='/js/plugins/daterangepicker/daterangepicker.js', type='text/javascript')
+		// bootstrap color picker
+		script(src='/js/plugins/colorpicker/bootstrap-colorpicker.min.js', type='text/javascript')
+		// bootstrap time picker
+		script(src='/js/plugins/timepicker/bootstrap-timepicker.min.js', type='text/javascript')
+		// AdminLTE App
+		script(src='/js/AdminLTE/app.js', type='text/javascript')
+		// AdminLTE for demo purposes
+		script(src='/js/AdminLTE/demo.js', type='text/javascript')
+		// Page script
+		script(src='/js/AdminLTE/forms/advanced.js',type='text/javascript')

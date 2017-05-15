@@ -1,0 +1,95 @@
+extends ../layout
+block content
+	// Content Header (Page header)
+	section.content-header
+		h1
+			| Data Management
+			small Preview
+		ol.breadcrumb
+			li
+				a(href='#')
+					i.fa.fa-hdd-o
+					| Home
+			li.active Home
+	// Main content
+	section.content
+		.row
+			.col-md-12
+				.box
+					.box-header
+						h3.box-title Import Task
+						.box-tools
+							ul.pagination.pagination-sm.no-margin.pull-right
+								li
+									a(href='#') &laquo;
+								li
+									a(href='#') 1
+								li
+									a(href='#') 2
+								li
+									a(href='#') 3
+								li
+									a(href='#') &raquo;
+					// /.box-header
+					.box-body.no-padding
+						table.table
+							tr
+								th(style='width: 10px') #
+								th Table
+								th Directory
+								th Filename
+								th Progress
+								th(style='width: 40px') Label
+							tr
+								td 1.
+								td CMS_USERDATA_NEWS
+								td /usr/home/cmsbatchuser/cmsbatch/UserData/Import/
+								td CMS_USERDATA_NEWS_{YYYYMMDD}.txt
+								td
+									.progress.xs
+										.progress-bar.progress-bar-danger(style='width: 55%')
+								td
+									span.badge.bg-red 55%
+							tr
+								td 2.
+								td CMS_USERDATA_INDI_NEWS
+								td /usr/home/cmsbatchuser/cmsbatch/UserData/Import/
+								td CMS_USERDATA_INDI_NEWS_{YYYYMMDD}.txt
+								td
+									.progress.xs
+										.progress-bar.progress-bar-yellow(style='width: 70%')
+								td
+									span.badge.bg-yellow 70%
+							tr
+								td 3.
+								td CMS_USERDATA_PAYATDTR
+								td /usr/home/cmsbatchuser/cmsbatch/UserData/Import/
+								td CMS_USERDATA_PAYATDTR_{YYYYMMDD}.txt
+								td
+									.progress.xs.progress-striped.active
+										.progress-bar.progress-bar-primary(style='width: 30%')
+								td
+									span.badge.bg-light-blue 30%
+							tr
+								td 4.
+								td CMS_USERDATA_COMM_ADJUST
+								td /usr/home/cmsbatchuser/cmsbatch/UserData/Import/
+								td CMS_USERDATA_COMM_ADJUST_{YYYYMMDD}.txt
+								td
+									.progress.xs.progress-striped.active
+										.progress-bar.progress-bar-success(style='width: 90%')
+								td
+									span.badge.bg-green 90%
+					// /.box-body
+				// /.box
+			// /.col
+	// /.content
+block javascript
+	// jQuery 2.0.2
+	script(src='/js/libs/jquery.min.js')
+	// Bootstrap
+	script(src='/js/bootstrap.min.js', type='text/javascript')
+	// AdminLTE App
+	script(src='/js/AdminLTE/app.js', type='text/javascript')
+	// AdminLTE for demo purposes
+	script(src='/js/AdminLTE/demo.js', type='text/javascript')

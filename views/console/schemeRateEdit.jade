@@ -1,0 +1,219 @@
+extends ../layout
+block content
+	// Content Header (Page header)
+	section.content-header
+		h1
+			| Edit - Scheme Rate Master
+		ol.breadcrumb
+			li
+				a(href='#')
+					i.fa.fa-dashboard
+					| Home
+			li.active Scheme Rate Master
+	// Main content
+	section.content
+		.row
+			// left column
+			.col-xs-12
+				// general form elements
+				.box.box-primary
+
+					// form start
+					form(role='form')
+						.box-body
+							.form-group
+								.row
+									.col-md-2
+										label Scheme Rate Pattern
+									// /.col
+									.col-md-4
+										select.form-control
+											option All 
+											option(selected=true) Act Only 
+											option Act+Proserm
+											option Act+Refill
+											option Act+Refill+Proserm
+											option Device Sell-Out
+											option Proserm Only
+									// /.col
+									.col-md-2
+										label Scheme Group
+									// /.col
+									.col-md-4
+										select.form-control
+											option All
+											option(selected=true) Act Only-Daily
+											option Act Refill-Daily
+											option Act+Proserm
+											option Act+Proserm(Online)AOU1D
+											option Act+Proserm(Online)AOU1D
+											option Act+Proserm(Special)
+											option Act_Proserm_Daily
+											option Proserm Special
+											option Refill AOU10D
+											option Refill AOU10D200B
+											option Refill AOU30D300B
+											option Refill AOU7D
+											option Refill+Proserm AOU10D
+											option SIMJew Refill (AOU10D)
+											option SIMJew Refill (AOU7D)
+											option Special Refill 
+											option Special Refill AOU10D
+											option Special Refill AOU7D
+											option USSD (Partner)
+											option USSD (Post)
+											option USSD (Pre)
+											option USSD SIMJew
+									// /.col
+								// /.row
+							.form-group
+								.row
+									.col-md-2
+										label Scheme Name
+									// /.col
+									.col-md-4
+										input.form-control.pull-right(type='text', value='Sch_ActRefill_AOU10D_HOL_Silver_ActJun16_Monthly') 
+									// /.col
+									.col-md-2
+										label Scheme Description
+									// /.col
+									.col-md-4
+										input.form-control.pull-right(type='text', value='Sch_ActRefill_AOU10D_HOL_Silver_ActJun16_Monthly')
+									// /.col
+								// /.row
+							.form-group
+								.row
+									.col-md-2
+										label Proserm Summary Type
+									// /.col
+									.col-md-4
+										select.form-control
+											option All
+											option(selected=true) Summary by Package Subscription
+									// /.col
+							.form-group
+								.row
+									.col-md-2
+										label Start Date 
+									// /.col
+									.col-md-4
+										.input-group
+											.input-group-addon
+												i.fa.fa-calendar
+											input#startdate2.form-control.pull-right(type='text', value='30/03/2015')
+									// /.col
+									.col-md-2
+										label End Date 
+									// /.col
+									.col-md-4
+										.input-group
+											.input-group-addon
+												i.fa.fa-calendar
+											input#enddate.form-control.pull-right(type='text', value='30/03/2015')
+									// /.col
+								// /.row
+							.form-group
+								.row
+									.col-md-2
+										label Aou from
+									// /.col
+									.col-md-4
+										input.form-control(type='text', value='1')
+									// /.col
+									.col-md-2
+										label Aou to
+									// /.col
+									.col-md-4
+										input.form-control(type='text', value='10')
+									// /.col
+								// /.row
+							.form-group
+								.row
+									.col-md-2
+										label Reward Type
+									// /.col
+									.col-md-4
+										select.form-control
+											option All
+											option(selected=true) Cash
+											option Cash &amp; DOL
+											option DOL
+											option Point
+									// /.col
+									.col-md-2
+										label Golive Status
+									// /.col
+									.col-md-4
+										select.form-control
+											option All
+											option Test
+											option(selected=true) Golive
+									// /.col
+								// /.row
+							.form-group
+								.row
+									.col-md-2
+										label Payment Frequency
+									// /.col
+									.col-md-4
+										select.form-control
+											option All
+											option(selected=true) Daily
+											option Monthly
+											option Specific
+									// /.col
+									.col-md-2
+										label Payment Specific Date
+									// /.col
+									.col-md-4
+										input.form-control(type='text')
+								// /.row
+							.form-group
+								.row
+									.col-md-2
+										label Pre-Condition	Cap Max
+									// /.col
+									.col-md-4
+										input.form-control(type='text')
+									// /.col
+							.form-group
+								.row
+									.col-md-2
+										label Excel for Setting Commission Rate
+									// /.col
+									.col-md-4
+										.input-group.input-group-sm
+											input.form-control(type='file')
+											span.input-group-btn
+												button.btn.btn-info.btn-primary(type='button') Validate
+									// /.col
+					// /.box-body
+					.box-footer
+						button.btn.btn-primary(type='button') Save
+						| 
+						button.btn.btn-primary(type='button') Reset
+				// /.box						
+			// /.col 
+		// /.row
+	// /.content
+	block javascript
+		// jQuery 2.0.2
+		script(src='/js/libs/jquery.min.js')
+		// Bootstrap
+		script(src='/js/bootstrap.min.js', type='text/javascript')
+		// InputMask
+		script(src='/js/plugins/input-mask/jquery.inputmask.js', type='text/javascript')
+		script(src='/js/plugins/input-mask/jquery.inputmask.date.extensions.js', type='text/javascript')
+		script(src='/js/plugins/input-mask/jquery.inputmask.extensions.js', type='text/javascript')
+		// date-range-picker
+		script(src='/js/plugins/daterangepicker/daterangepicker.js', type='text/javascript')
+		// bootstrap color picker
+		script(src='/js/plugins/colorpicker/bootstrap-colorpicker.min.js', type='text/javascript')
+		// bootstrap time picker
+		script(src='/js/plugins/timepicker/bootstrap-timepicker.min.js', type='text/javascript')
+		// AdminLTE App
+		script(src='/js/AdminLTE/app.js', type='text/javascript')
+		// AdminLTE for demo purposes
+		script(src='/js/AdminLTE/demo.js', type='text/javascript')
+		// Page script
+		script(src='/js/AdminLTE/forms/advanced.js',type='text/javascript')

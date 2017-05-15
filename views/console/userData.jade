@@ -1,0 +1,196 @@
+extends ../layout
+block content
+	// Content Header (Page header)
+	section.content-header
+		h1
+			| User Data
+		ol.breadcrumb
+			li
+				a(href='#')
+					i.fa.fa-dashboard
+					| Home
+			li.active User Data
+	// Main content
+	section.content
+		// general form elements
+		.box.box-primary
+			// form start
+			form(role='form')
+				.box-body
+					.form-group
+						.row
+							.col-sm-2
+								label Select Case
+							// /.col
+							.col-sm-5
+								select.form-control
+									option Please select
+									option CMS_USERDATA_NEWS
+									option CMS_USERDATA_INDI_NEWS
+									option CMS_USERDATA_COMM_ADJUST
+									option CMS_USERDATA_HOLDPARTNER
+									option CMS_USERDATA_NOLETTER
+									option CMS_USERDATA_NONVAT_COMPANY
+									option CMS_USERDATA_PAYATDTR
+									option CMS_USERDATA_PAYATDTR_LIST
+									option CMS_MAS_SCHEME_MATRIX_MAPPING
+									option CMS_USERDATA_MONTHLY_PAYDATE
+							// /.col
+							.col-sm-5
+								a(href='#') CMS_USERDATA_NEWS
+							// /.col
+						// /.row
+					.form-group
+						.row
+							.col-sm-2
+								label File Name
+							// /.col
+							.col-sm-6
+								input#exampleInputFile(type='file')
+							// /.col
+						// /.row
+				// /.box-body
+				.box-footer
+					button.btn.btn-primary(type='submit') Validate
+					| 
+					button.btn.btn-primary(type='reset') Reset
+		// /.box
+		.box
+			.box-header
+				h3.box-title Validate Data Preview
+			// /.box-header
+			.box-body.table-responsive
+				table#example2.table.table-hover
+					thead
+						tr
+							th(style='width: 50px') Row Id	
+							th NewsLine1	
+							th NewsLine2	
+							th Month(MM)	
+							th Year(YYYY)	
+							th Remark	
+							th Error Detail
+					tbody
+						tr
+							td 1
+							td Data of news line1
+							td Data of news line2
+							td 03
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 03/2014
+							td 
+								span.badge.bg-red Col99 : 'Month/Year' must be >= Current Month/Year
+						tr
+							td 2
+							td Data of news line1
+							td Data of news line2
+							td 04
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 04/2014
+							td 
+								span.badge.bg-red Col99
+								| 
+								small.text-red 'Month/Year' must be >= Current Month/Year
+						tr
+							td 3
+							td Data of news line1
+							td Data of news line2
+							td 03
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 03/2014
+							td 
+								small.text-red 'Month/Year' must be >= Current Month/Year
+						tr
+							td 4
+							td Data of news line1
+							td Data of news line2
+							td 04
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 04/2014
+							td 
+						tr
+							td 5
+							td Data of news line1
+							td Data of news line2
+							td 04
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 04/2014
+							td 
+						tr
+							td 6
+							td Data of news line1
+							td Data of news line2
+							td 04
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 04/2014
+							td 
+						tr
+							td 7
+							td Data of news line1
+							td Data of news line2
+							td 03
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 03/2014
+							td 
+						tr
+							td 8
+							td Data of news line1
+							td Data of news line2
+							td 04
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 04/2014
+							td 
+						tr
+							td 9
+							td Data of news line1
+							td Data of news line2
+							td 03
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 03/2014
+							td 
+						tr
+							td 10
+							td Data of news line1
+							td Data of news line2
+							td 04
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 04/2014
+							td 
+						tr
+							td 11
+							td Data of news line1
+							td Data of news line2
+							td 04
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 04/2014
+							td 
+						tr
+							td 12
+							td Data of news line1
+							td Data of news line2
+							td 04
+							td 2014
+							td ตัวอย่างข้อมูลข่าวเดือน 04/2014
+							td 
+						
+			// /.box-body
+			.box-footer
+				button.btn.btn-primary.disabled(type='button') Save
+				| 
+				button.btn.btn-primary(type='button') Upload New File
+		// /.box
+	// /.content
+block javascript
+	// jQuery 2.0.2
+	script(src='/js/libs/jquery.min.js')
+	// Bootstrap
+	script(src='/js/bootstrap.min.js', type='text/javascript')
+	// DATA TABES SCRIPT
+	script(src='/js/plugins/datatables/jquery.dataTables.js', type='text/javascript')
+	script(src='/js/plugins/datatables/dataTables.bootstrap.js', type='text/javascript')
+	// AdminLTE App
+	script(src='/js/AdminLTE/app.js', type='text/javascript')
+	// AdminLTE for demo purposes
+	script(src='/js/AdminLTE/demo.js', type='text/javascript')
+	// page script
+	script(src='/js/AdminLTE/tables/data.js',type='text/javascript')
